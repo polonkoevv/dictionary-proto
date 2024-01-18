@@ -1,0 +1,73 @@
+syntax="proto3";
+
+package auth;
+
+option go_package = "tuzov.sso.v1;ssov1";
+
+service ingDictionaryService{
+	// Word
+	// Add Word
+	rpc addWord (AddWordReq) returns (AddWordRes) {};
+	// Get Word
+	rpc getWord (GetWordReq) returns (GetWordRes) {};
+	// Get All Words
+	rpc getAllWords (Empty) returns (GetAllWordsRes) {};
+	// Edit Word
+	rpc editWord (EditWordReq) returns (EditWordRes) {};
+	// Delete Word
+	rpc deleWord (DeleteWordReq) returns (DeleteWordRes) {};
+}
+
+message Empty{}
+
+message AddWordReq{
+	string ingType = 1;
+	string rusType = 2;
+	string definition = 3;
+}
+
+message AddWordRes{
+	string uid = 1;
+	string ingType = 2;
+	string rusType = 3;
+	string definition = 4;
+}
+
+message GetWordReq{
+	string uid = 1;
+}
+
+message GetWordRes{
+	string uid = 1;
+	string ingType = 2;
+	string rusType = 3;
+	string definition = 4;
+}
+
+message GetAllWordsRes{
+	repeated GetWordRes allWords = 1;
+}
+
+message EditWordReq{
+	string uid = 1;
+	string ingType = 2;
+	string rusType = 3;
+	string definition = 4;
+}
+
+message EditWordRes{
+	string uid = 1;
+	string ingType = 2;
+	string rusType = 3;
+	string definition = 4;
+}
+
+message DeleteWordReq{
+	string uid = 1;
+}
+
+message DeleteWordRes{
+	string uid = 1;
+}
+
+
