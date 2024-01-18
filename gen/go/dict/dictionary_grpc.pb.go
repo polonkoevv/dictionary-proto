@@ -4,7 +4,7 @@
 // - protoc             v4.25.2
 // source: dict/dictionary.proto
 
-package ssov1
+package dictproto
 
 import (
 	context "context"

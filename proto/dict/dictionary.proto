@@ -2,7 +2,7 @@ syntax="proto3";
 
 package auth;
 
-option go_package = "tuzov.sso.v1;ssov1";
+option go_package = "polonkoevv.dict.v1;dictproto";
 
 service ingDictionaryService{
 	// Word
